@@ -1,0 +1,44 @@
+.color1 {
+  background-color: rgb(79, 225, 7);
+}
+
+.color2 {
+  background-color: rgb(153,204,51);
+}
+
+.color3 {
+  background-color: rgb(255,204,0);
+}
+
+.color4 {
+  background-color: rgb(255,153,102);
+}
+
+.color5 {
+  background-color: rgb(255, 88, 32);
+}
+
+.nw{
+  white-space: nowrap;
+}
+
+.textCriteria {
+  text-align: left; width: 30%;
+padding-right: 10%;
+}
+
+.colorTable {
+  text-align: right; width: 10%;
+}
+
+.colorTable > table {
+  width: 100%;
+}
+
+.colorCell {
+  text-align: left; width: 16%;
+}
+
+.percentageCell {
+  text-align: center; width: 10%;
+}

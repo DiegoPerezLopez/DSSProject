@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>DSS Project</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<link rel="stylesheet" href="report.css">
+</head>
+<tbody>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="report.html">DSS</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item active">
+					<a class="nav-link" href="report.html">Report table <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="criteria.html">Criteria description</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<div class="container">
+		<h2>Criteria description</h2>
+		<ul class="list-group">
+		  	<li class="list-group-item"><p class="text-justify">
+		  		<table cellspacing="0" cellpadding="0" border="0" >
+				      <tr>
+				        <td class="textCriteria">
+				        	<p class="font-weight-bold">1. ICU total occupancy percentage</p> 
+					  			It is the total occupancy percentage of ICU (Intensive Care Unit).
+							</p>
+				        </td>
+				        <td class="colorTable">
+				        	<table cellspacing="0" cellpadding="0" border="1" >
+					        	<tr >
+					        		<td class="color1 colorCell"></td>
+					        		<td class="percentageCell">0% - 20%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color2 colorCell"></td>
+					        		<td class="percentageCell">20% - 40%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color3 colorCell"></td>
+					        		<td class="percentageCell">40% - 60%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color4 colorCell"></td>
+					        		<td class="percentageCell">60% - 80%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color5 colorCell"></td>
+					        		<td class="percentageCell">80% - 100%</td>
+					        	</tr>
+					        </table>
+				        </td>
+				    </tr>
+				  </table>
+		  		
+  			</li>
+  			<li class="list-group-item"><p class="text-justify">
+		  		
+  				<table cellspacing="0" cellpadding="0" border="0" >
+				      <tr>
+				        <td class="textCriteria">
+				        	<p class="font-weight-bold">2. Expected ICU total occupancy percentage 1, 3 and 7 days later</p> 
+		  					<p>It is the expected total occupancy percentage of ICU, calculated with the predictive mathematical model.</p>
+				        </td>
+				        <td class="colorTable">
+				        	<table cellspacing="0" cellpadding="0" border="1" >
+					        	<tr >
+					        		<td class="color1 colorCell"></td>
+					        		<td class="percentageCell">0% - 20%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color2 colorCell"></td>
+					        		<td class="percentageCell">20% - 40%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color3 colorCell"></td>
+					        		<td class="percentageCell">40% - 60%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color4 colorCell"></td>
+					        		<td class="percentageCell">60% - 80%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color5 colorCell"></td>
+					        		<td class="percentageCell">80% - 100%</td>
+					        	</tr>
+					        </table>
+				        </td>
+				    </tr>
+				  </table>
+  			</li>
+  			<li class="list-group-item"><p class="text-justify">
+		  		<table cellspacing="0" cellpadding="0" border="0" >
+				      <tr>
+				        <td class="textCriteria">
+				        	<p class="font-weight-bold">3. ICU COVID-19 occupancy percentage</p> 
+		  					</p>It is the occupancy percentage of ICU, but only of COVID-19 patients.</p>
+				        </td>
+				        <td class="colorTable">
+				        	<table cellspacing="0" cellpadding="0" border="1" >
+					        	<tr >
+					        		<td class="color1 colorCell"></td>
+					        		<td class="percentageCell">0% - 15%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color2 colorCell"></td>
+					        		<td class="percentageCell">15% - 30%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color3 colorCell"></td>
+					        		<td class="percentageCell">30% - 45%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color4 colorCell"></td>
+					        		<td class="percentageCell">45% - 60%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color5 colorCell"></td>
+					        		<td class="percentageCell">>60%</td>
+					        	</tr>
+					        </table>
+				        </td>
+				    </tr>
+				  </table>
+  			</li>
+  			<li class="list-group-item"><p class="text-justify">
+		  		
+		  		<table cellspacing="0" cellpadding="0" border="0" >
+				      <tr>
+				        <td class="textCriteria">
+				        	<p class="font-weight-bold">4. Expected ICU COVID-19 occupancy percentage 1, 3 and 7 days later</p> 
+		  					</p>It is the expected COVID-19 patients occupancy percentage of ICU, calculated with the predictive mathematical model.</p>
+				        </td>
+				        <td class="colorTable">
+				        	<table cellspacing="0" cellpadding="0" border="1" >
+					        	<tr >
+					        		<td class="color1 colorCell"></td>
+					        		<td class="percentageCell">0% - 15%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color2 colorCell"></td>
+					        		<td class="percentageCell">15% - 30%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color3 colorCell"></td>
+					        		<td class="percentageCell">30% - 45%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color4 colorCell"></td>
+					        		<td class="percentageCell">45% - 60%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color5 colorCell"></td>
+					        		<td class="percentageCell">>60%</td>
+					        	</tr>
+					        </table>
+				        </td>
+				    </tr>
+				  </table>
+  			</li>
+  			<li class="list-group-item"><p class="text-justify">
+		  		
+		  		<table cellspacing="0" cellpadding="0" border="0" >
+				      <tr>
+				        <td class="textCriteria">
+				        	<p class="font-weight-bold">5. Ratio ICU patients with COVID-19 / total ICU patients</p> 
+		  					</p>It is the percentage of COVID-19 patients in ICU by the total amount of ICU patients.</p>
+				        </td>
+				        <td class="colorTable">
+				        	<table cellspacing="0" cellpadding="0" border="1" >
+					        	<tr >
+					        		<td class="color1 colorCell"></td>
+					        		<td class="percentageCell">0% - 20%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color2 colorCell"></td>
+					        		<td class="percentageCell">20% - 40%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color3 colorCell"></td>
+					        		<td class="percentageCell">40% - 60%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color4 colorCell"></td>
+					        		<td class="percentageCell">60% - 80%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color5 colorCell"></td>
+					        		<td class="percentageCell">80% - 100%</td>
+					        	</tr>
+					        </table>
+				        </td>
+				    </tr>
+				  </table>
+  			</li>
+  			<li class="list-group-item"><p class="text-justify">
+		  		
+		  		<table cellspacing="0" cellpadding="0" border="0" >
+				      <tr>
+				        <td class="textCriteria">
+				        	<p class="font-weight-bold">6. Hospitalized total occupancy percentage</p> 
+		  					</p>It is the total percentage of patients hospitalized, which also means the number of occupied beds in the hospital.</p>
+				        </td>
+				        <td class="colorTable">
+				        	<table cellspacing="0" cellpadding="0" border="1" >
+					        	<tr >
+					        		<td class="color1 colorCell"></td>
+					        		<td class="percentageCell">0% - 20%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color2 colorCell"></td>
+					        		<td class="percentageCell">20% - 40%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color3 colorCell"></td>
+					        		<td class="percentageCell">40% - 60%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color4 colorCell"></td>
+					        		<td class="percentageCell">60% - 80%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color5 colorCell"></td>
+					        		<td class="percentageCell">80% - 100%</td>
+					        	</tr>
+					        </table>
+				        </td>
+				    </tr>
+				  </table>
+  			</li>
+  			<li class="list-group-item"><p class="text-justify">
+		  		
+		  		<table cellspacing="0" cellpadding="0" border="0" >
+				      <tr>
+				        <td class="textCriteria">
+				        	<p class="font-weight-bold">7. Expected hospitalized total occupancy percentage 1, 3 and 7 days later</p> 
+		  					</p>It is the expected total percentage of hospitalized patients expected, calculated with the predictive mathematical model.</p>
+				        </td>
+				        <td class="colorTable">
+				        	<table cellspacing="0" cellpadding="0" border="1" >
+					        	<tr >
+					        		<td class="color1 colorCell"></td>
+					        		<td class="percentageCell">0% - 20%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color2 colorCell"></td>
+					        		<td class="percentageCell">20% - 40%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color3 colorCell"></td>
+					        		<td class="percentageCell">40% - 60%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color4 colorCell"></td>
+					        		<td class="percentageCell">60% - 80%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color5 colorCell"></td>
+					        		<td class="percentageCell">80% - 100%</td>
+					        	</tr>
+					        </table>
+				        </td>
+				    </tr>
+				  </table>
+  			</li>
+  			<li class="list-group-item"><p class="text-justify">
+		  		
+		  		<table cellspacing="0" cellpadding="0" border="0" >
+				      <tr>
+				        <td class="textCriteria">
+				        	<p class="font-weight-bold">8. Hospitalized COVID-19 occupancy percentage</p> 
+		  					</p>It is the percentage of hospitalized patients, but only of COVID-19 patients.</p>
+				        </td>
+				        <td class="colorTable">
+				        	<table cellspacing="0" cellpadding="0" border="1" >
+					        	<tr >
+					        		<td class="color1 colorCell"></td>
+					        		<td class="percentageCell">0% - 15%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color2 colorCell"></td>
+					        		<td class="percentageCell">15% - 30%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color3 colorCell"></td>
+					        		<td class="percentageCell">30% - 45%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color4 colorCell"></td>
+					        		<td class="percentageCell">45% - 60%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color5 colorCell"></td>
+					        		<td class="percentageCell">>60%</td>
+					        	</tr>
+					        </table>
+				        </td>
+				    </tr>
+				  </table>
+  			</li>
+  			<li class="list-group-item"><p class="text-justify">
+		  		
+		  		<table cellspacing="0" cellpadding="0" border="0" >
+				      <tr>
+				        <td class="textCriteria">
+				        	<p class="font-weight-bold">9. Expected hospitalized COVID-19 occupancy percentage 1, 3 and 7 days later</p> 
+		  					</p>It is the expected COVID-19 percentage of hospitalized patients expected, calculated with the predictive mathematical model.</p>
+				        </td>
+				        <td class="colorTable">
+				        	<table cellspacing="0" cellpadding="0" border="1" >
+					        	<tr >
+					        		<td class="color1 colorCell"></td>
+					        		<td class="percentageCell">0% - 15%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color2 colorCell"></td>
+					        		<td class="percentageCell">15% - 30%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color3 colorCell"></td>
+					        		<td class="percentageCell">30% - 45%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color4 colorCell"></td>
+					        		<td class="percentageCell">45% - 60%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color5 colorCell"></td>
+					        		<td class="percentageCell">>60%</td>
+					        	</tr>
+					        </table>
+				        </td>
+				    </tr>
+				  </table>
+  			</li>
+  			<li class="list-group-item"><p class="text-justify">
+		  		
+		  		<table cellspacing="0" cellpadding="0" border="0" >
+				      <tr>
+				        <td class="textCriteria">
+				        	<p class="font-weight-bold">10. Ratio hospitalized patients with COVID-19 / total hospitalized patients</p> 
+		  					</p>It is the percentage of COVID-19  hospitalized patients by the total amount of hospitalized patients</p>
+				        </td>
+				        <td class="colorTable">
+				        	<table cellspacing="0" cellpadding="0" border="1" >
+					        	<tr >
+					        		<td class="color1 colorCell"></td>
+					        		<td class="percentageCell">0% - 20%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color2 colorCell"></td>
+					        		<td class="percentageCell">20% - 40%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color3 colorCell"></td>
+					        		<td class="percentageCell">40% - 60%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color4 colorCell"></td>
+					        		<td class="percentageCell">60% - 80%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color5 colorCell"></td>
+					        		<td class="percentageCell">80% - 100%</td>
+					        	</tr>
+					        </table>
+				        </td>
+				    </tr>
+				  </table>
+  			</li>
+  			<li class="list-group-item"><p class="text-justify">
+		  		
+		  		<table cellspacing="0" cellpadding="0" border="0" >
+				      <tr>
+				        <td class="textCriteria">
+				        	<p class="font-weight-bold">11. Amount of COVID-19 positives/100.000</p> 
+		  					</p>It is the number of COVID-19 positives per each 100.000 inhabitants since the start of the pandemic</p>
+				        </td>
+				        <td class="colorTable">
+				        	<table cellspacing="0" cellpadding="0" border="1" >
+					        	<tr >
+					        		<td class="color1 colorCell"></td>
+					        		<td class="percentageCell">0 - 5000</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color2 colorCell"></td>
+					        		<td class="percentageCell">5000 - 10.000</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color3 colorCell"></td>
+					        		<td class="percentageCell">10.000 - 15.000</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color4 colorCell"></td>
+					        		<td class="percentageCell">15.000 - 20.000</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color5 colorCell"></td>
+					        		<td class="percentageCell">>20.000</td>
+					        	</tr>
+					        </table>
+				        </td>
+				    </tr>
+				  </table>
+  			</li>
+  			<li class="list-group-item"><p class="text-justify">
+		  		
+		  		<table cellspacing="0" cellpadding="0" border="0" >
+				      <tr>
+				        <td class="textCriteria">
+				        	<p class="font-weight-bold">12. Expected amount of COVID-19 patients 1, 3 and 7 days later</p> 
+		  					</p>It is the expected number of COVID-19 positives per each 100.000 inhabitants since the start of the pandemic, calculated with the predictive mathematical model.</p>
+				        </td>
+				        <td class="colorTable">
+				        	<table cellspacing="0" cellpadding="0" border="1" >
+					        	<tr >
+					        		<td class="color1 colorCell"></td>
+					        		<td class="percentageCell">0 - 5000</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color2 colorCell"></td>
+					        		<td class="percentageCell">5000 - 10.000</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color3 colorCell"></td>
+					        		<td class="percentageCell">10.000 - 15.000</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color4 colorCell"></td>
+					        		<td class="percentageCell">15.000 - 20.000</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color5 colorCell"></td>
+					        		<td class="percentageCell">>20.000</td>
+					        	</tr>
+					        </table>
+				        </td>
+				    </tr>
+				  </table>
+  			</li>
+  			<li class="list-group-item"><p class="text-justify">
+		  		
+		  		<table cellspacing="0" cellpadding="0" border="0" >
+				      <tr>
+				        <td class="textCriteria">
+				        	<p class="font-weight-bold">13. Amount of recovered COVID-19 patients/100.000	</p> 
+		  					</p>It is the number of recovered patients of COVID-19 per 100.000 inhabitants since the start of the pandemic.</p>
+				        </td>
+				        <td class="colorTable">
+				        	<table cellspacing="0" cellpadding="0" border="1" >
+					        	<tr >
+					        		<td class="color1 colorCell"></td>
+					        		<td class="percentageCell">95.000 - 100.000</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color2 colorCell"></td>
+					        		<td class="percentageCell">90.000 - 95.000</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color3 colorCell"></td>
+					        		<td class="percentageCell">85.000 - 90.000</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color4 colorCell"></td>
+					        		<td class="percentageCell">80.000 - 85.000</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color5 colorCell"></td>
+					        		<td class="percentageCell"><80.000</td>
+					        	</tr>
+					        </table>
+				        </td>
+				    </tr>
+				  </table>
+  			</li>
+  			<li class="list-group-item"><p class="text-justify">
+		  		
+		  		<table cellspacing="0" cellpadding="0" border="0" >
+				      <tr>
+				        <td class="textCriteria">
+				        	<p class="font-weight-bold">14. Expected recovered COVID-19 patients 1, 3 and 7 days later</p> 
+		  					</p>It is the expected number of recovered patients of COVID-19 per 100.000 inhabitants since the start of the pandemic, calculated with the predictive mathematical model.</p>
+				        </td>
+				        <td class="colorTable">
+				        	<table cellspacing="0" cellpadding="0" border="1" >
+					        	<tr >
+					        		<td class="color1 colorCell"></td>
+					        		<td class="percentageCell">95.000 - 100.000</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color2 colorCell"></td>
+					        		<td class="percentageCell">90.000 - 95.000</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color3 colorCell"></td>
+					        		<td class="percentageCell">85.000 - 90.000</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color4 colorCell"></td>
+					        		<td class="percentageCell">80.000 - 85.000</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color5 colorCell"></td>
+					        		<td class="percentageCell"><80.000</td>
+					        	</tr>
+					        </table>
+				        </td>
+				    </tr>
+				  </table>
+  			</li>
+  			<li class="list-group-item"><p class="text-justify">
+		  		
+		  		<table cellspacing="0" cellpadding="0" border="0" >
+				      <tr>
+				        <td class="textCriteria">
+				        	<p class="font-weight-bold">15. Ratio of recovered COVID-19 patients / COVID-19 patients</p> 
+		  					</p>It is the percentage of recovered patients of COVID-19 by the number of positives since the start of the pandemic.</p>
+				        </td>
+				        <td class="colorTable">
+				        	<table cellspacing="0" cellpadding="0" border="1" >
+					        	<tr >
+					        		<td class="color1 colorCell"></td>
+					        		<td class="percentageCell">95% - 100%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color2 colorCell"></td>
+					        		<td class="percentageCell">90% - 95%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color3 colorCell"></td>
+					        		<td class="percentageCell">85% - 90%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color4 colorCell"></td>
+					        		<td class="percentageCell">80% - 85%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color5 colorCell"></td>
+					        		<td class="percentageCell"><80%</td>
+					        	</tr>
+					        </table>
+				        </td>
+				    </tr>
+				  </table>
+  			</li>
+  			<li class="list-group-item"><p class="text-justify">
+		  		
+		  		<table cellspacing="0" cellpadding="0" border="0" >
+				      <tr>
+				        <td class="textCriteria">
+				        	<p class="font-weight-bold">16. Amount of dead COVID-19 patients/100.000</p> 
+		  					</p>It is the number of dead patients because of COVID-19 per 100.000 inhabitants since the start of the pandemic.</p>
+				        </td>
+				        <td class="colorTable">
+				        	<table cellspacing="0" cellpadding="0" border="1" >
+					        	<tr >
+					        		<td class="color1 colorCell"></td>
+					        		<td class="percentageCell">100 - 500</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color2 colorCell"></td>
+					        		<td class="percentageCell">500 - 1.000</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color3 colorCell"></td>
+					        		<td class="percentageCell">1.000 - 1.500</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color4 colorCell"></td>
+					        		<td class="percentageCell">1.500 - 2000</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color5 colorCell"></td>
+					        		<td class="percentageCell">>2.000</td>
+					        	</tr>
+					        </table>
+				        </td>
+				    </tr>
+				  </table>
+  			</li>
+  			<li class="list-group-item"><p class="text-justify">
+		  		
+		  		<table cellspacing="0" cellpadding="0" border="0" >
+				      <tr>
+				        <td class="textCriteria">
+				        	<p class="font-weight-bold">17. Expected dead COVID-19 patients 1, 3 and 7 days later</p> 
+		  					</p>It is the expected number of dead patients because of COVID-19 per 100.000 inhabitants since the start of the pandemic, calculated with the predictive mathematical model.</p>
+				        </td>
+				        <td class="colorTable">
+				        	<table cellspacing="0" cellpadding="0" border="1" >
+					        	<tr >
+					        		<td class="color1 colorCell"></td>
+					        		<td class="percentageCell">100 - 500</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color2 colorCell"></td>
+					        		<td class="percentageCell">500 - 1.000</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color3 colorCell"></td>
+					        		<td class="percentageCell">1.000 - 1.500</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color4 colorCell"></td>
+					        		<td class="percentageCell">1.500 - 2000</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color5 colorCell"></td>
+					        		<td class="percentageCell">>2.000</td>
+					        	</tr>
+					        </table>
+				        </td>
+				    </tr>
+				  </table>
+  			</li>
+  			<li class="list-group-item"><p class="text-justify">
+		  		
+		  		<table cellspacing="0" cellpadding="0" border="0" >
+				      <tr>
+				        <td class="textCriteria">
+				        	<p class="font-weight-bold">18. Ratio of dead COVID-19 patients / recovered COVID-19 patients</p> 
+		  					</p>It is the percentage of dead patients because of COVID-19 by the number of recovered patients of COVID-19 since the start of the pandemic.</p>
+				        </td>
+				        <td class="colorTable">
+				        	<table cellspacing="0" cellpadding="0" border="1" >
+					        	<tr >
+					        		<td class="color1 colorCell"></td>
+					        		<td class="percentageCell">1% - 2%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color2 colorCell"></td>
+					        		<td class="percentageCell">2% - 3%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color3 colorCell"></td>
+					        		<td class="percentageCell">3% - 4%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color4 colorCell"></td>
+					        		<td class="percentageCell">4% - 5%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color5 colorCell"></td>
+					        		<td class="percentageCell">>5%</td>
+					        	</tr>
+					        </table>
+				        </td>
+				    </tr>
+				  </table>
+  			</li>
+  			<li class="list-group-item"><p class="text-justify">
+		  		
+		  		<table cellspacing="0" cellpadding="0" border="0" >
+				      <tr>
+				        <td class="textCriteria">
+				        	<p class="font-weight-bold">19. Average age</p> 
+		  					</p>It is the average age of the population with residence in an area.</p>
+				        </td>
+				        <td class="colorTable">
+				        	<table cellspacing="0" cellpadding="0" border="1" >
+					        	<tr >
+					        		<td class="color1 colorCell"></td>
+					        		<td class="percentageCell"><40</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color2 colorCell"></td>
+					        		<td class="percentageCell">40 - 50</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color3 colorCell"></td>
+					        		<td class="percentageCell">50 - 60</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color4 colorCell"></td>
+					        		<td class="percentageCell">60 - 70</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color5 colorCell"></td>
+					        		<td class="percentageCell">>70</td>
+					        	</tr>
+					        </table>
+				        </td>
+				    </tr>
+				  </table>
+  			</li>
+  			<li class="list-group-item"><p class="text-justify">
+		  		
+		  		<table cellspacing="0" cellpadding="0" border="0" >
+				      <tr>
+				        <td class="textCriteria">
+				        	<p class="font-weight-bold">20. Average age of sick patients</p> 
+		  					</p>It is the average age of people who have been confirmed of COVID.</p>
+				        </td>
+				        <td class="colorTable">
+				        	<table cellspacing="0" cellpadding="0" border="1" >
+					        	<tr >
+					        		<td class="color1 colorCell"></td>
+					        		<td class="percentageCell"><40</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color2 colorCell"></td>
+					        		<td class="percentageCell">40 - 50</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color3 colorCell"></td>
+					        		<td class="percentageCell">50 - 60</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color4 colorCell"></td>
+					        		<td class="percentageCell">60 - 70</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color5 colorCell"></td>
+					        		<td class="percentageCell">>70</td>
+					        	</tr>
+					        </table>
+				        </td>
+				    </tr>
+				  </table>
+  			</li>
+			  <li class="list-group-item"><p class="text-justify">
+				
+				<table cellspacing="0" cellpadding="0" border="0" >
+				      <tr>
+				        <td class="textCriteria">
+				        	<p class="font-weight-bold">21. Actual medical personnel / 100 patients</p> 
+							<p>It is the actual amount of personnel per 100 patients.</p>
+				        </td>
+				        <td class="colorTable">
+				        	<table cellspacing="0" cellpadding="0" border="1" >
+					        	<tr >
+					        		<td class="color1 colorCell"></td>
+					        		<td class="percentageCell">80 - 100</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color2 colorCell"></td>
+					        		<td class="percentageCell">60 - 80</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color3 colorCell"></td>
+					        		<td class="percentageCell">40 - 60</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color4 colorCell"></td>
+					        		<td class="percentageCell">20 - 40</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color5 colorCell"></td>
+					        		<td class="percentageCell">0 - 20</td>
+					        	</tr>
+					        </table>
+				        </td>
+				    </tr>
+				  </table>
+			</li>
+			<li class="list-group-item"><p class="text-justify">
+				
+				<table cellspacing="0" cellpadding="0" border="0" >
+				      <tr>
+				        <td class="textCriteria">
+				        	<p class="font-weight-bold">22. Expected medical personnel needed 1, 3 and 7 days later</p> 
+							</p>It is the amount of personal per 100 patients that will be necessary to assure the quality of treatments.</p>
+				        </td>
+				        <td class="colorTable">
+				        	<table cellspacing="0" cellpadding="0" border="1" >
+					        	<tr >
+					        		<td class="color1 colorCell"></td>
+					        		<td class="percentageCell">0% - 2.5%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color2 colorCell"></td>
+					        		<td class="percentageCell">2.5% - 5%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color3 colorCell"></td>
+					        		<td class="percentageCell">5% - 7.5%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color4 colorCell"></td>
+					        		<td class="percentageCell">7.5% - 10%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color5 colorCell"></td>
+					        		<td class="percentageCell">>10%</td>
+					        	</tr>
+					        </table>
+				        </td>
+				    </tr>
+				  </table>
+			</li>
+			<li class="list-group-item"><p class="text-justify">
+				
+				<table cellspacing="0" cellpadding="0" border="0" >
+				      <tr>
+				        <td class="textCriteria">
+				        	<p class="font-weight-bold">23. Reserve of medical supplies</p> 
+							</p>It is the amount of equipment that the hospitals in an area have stored.</p>
+				        </td>
+				        <td class="colorTable">
+				        	<table cellspacing="0" cellpadding="0" border="1" >
+					        	<tr >
+					        		<td class="color1 colorCell"></td>
+					        		<td class="percentageCell">80% - 100%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color2 colorCell"></td>
+					        		<td class="percentageCell">60% - 80%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color3 colorCell"></td>
+					        		<td class="percentageCell">40% - 60%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color4 colorCell"></td>
+					        		<td class="percentageCell">20% - 40%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color5 colorCell"></td>
+					        		<td class="percentageCell">0% - 20%</td>
+					        	</tr>
+					        </table>
+				        </td>
+				    </tr>
+				  </table>
+			</li>
+			<li class="list-group-item"><p class="text-justify">
+				
+				<table cellspacing="0" cellpadding="0" border="0" >
+				      <tr>
+				        <td class="textCriteria">
+				        	<p class="font-weight-bold">24. Daily material consumption</p> 
+							</p>It is the average material consumption in the last 15 days</p>
+				        </td>
+				        <td class="colorTable">
+				        	<table cellspacing="0" cellpadding="0" border="1" >
+					        	<tr >
+					        		<td class="color1 colorCell"></td>
+					        		<td class="percentageCell">0% - 5%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color2 colorCell"></td>
+					        		<td class="percentageCell">5% - 10%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color3 colorCell"></td>
+					        		<td class="percentageCell">10% - 15%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color4 colorCell"></td>
+					        		<td class="percentageCell">15% - 20%</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color5 colorCell"></td>
+					        		<td class="percentageCell">>20%</td>
+					        	</tr>
+					        </table>
+				        </td>
+				    </tr>
+				  </table>
+			</li>
+			<li class="list-group-item"><p class="text-justify">
+				
+				<table cellspacing="0" cellpadding="0" border="0" >
+				      <tr>
+				        <td class="textCriteria">
+				        	<p class="font-weight-bold">25. Lockdown level</p> 
+							</p>It is the level of restrictions set in the area of people assigned to the hospital. If the level is high, the supply will be reduced and the control measurements inside the hospital will also have to be more strict.</p>
+				        </td>
+				        <td class="colorTable">
+				        	<table cellspacing="0" cellpadding="0" border="1" >
+					        	<tr >
+					        		<td class="color1 colorCell"></td>
+					        		<td class="percentageCell">0 - 2</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color2 colorCell"></td>
+					        		<td class="percentageCell">2 - 4</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color3 colorCell"></td>
+					        		<td class="percentageCell">4 - 6</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color4 colorCell"></td>
+					        		<td class="percentageCell">6 - 8</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color5 colorCell"></td>
+					        		<td class="percentageCell">8 - 10</td>
+					        	</tr>
+					        </table>
+				        </td>
+				    </tr>
+				  </table>
+			</li>
+			<li class="list-group-item"><p class="text-justify">
+				
+				<table cellspacing="0" cellpadding="0" border="0" >
+				      <tr>
+				        <td class="textCriteria">
+				        	<p class="font-weight-bold">26. Transport system level</p> 
+							</p>It is the level of the transport system that delivers supplies to the hospital. It is taken into account the time of delivery, distance that travels, number of vehicles, etc.</p>
+				        </td>
+				        <td class="colorTable">
+				        	<table cellspacing="0" cellpadding="0" border="1" >
+					        	<tr >
+					        		<td class="color1 colorCell"></td>
+					        		<td class="percentageCell">0 - 2</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color2 colorCell"></td>
+					        		<td class="percentageCell">2 - 4</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color3 colorCell"></td>
+					        		<td class="percentageCell">4 - 6</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color4 colorCell"></td>
+					        		<td class="percentageCell">6 - 8</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color5 colorCell"></td>
+					        		<td class="percentageCell">8 - 10</td>
+					        	</tr>
+					        </table>
+				        </td>
+				    </tr>
+				  </table>
+			</li>
+			<li class="list-group-item"><p class="text-justify">
+				
+				<table cellspacing="0" cellpadding="0" border="0" >
+				      <tr>
+				        <td class="textCriteria">
+				        	<p class="font-weight-bold">27. Weather type</p> 
+							</p>It is the weather in the area assigned to the hospital.</p>				        
+						</td>
+				        <td class="colorTable">
+				        	<table cellspacing="0" cellpadding="0" border="1" >
+					        	<tr >
+					        		<td class="color1 colorCell"></td>
+					        		<td class="percentageCell">0 - 2</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color2 colorCell"></td>
+					        		<td class="percentageCell">2 - 4</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color3 colorCell"></td>
+					        		<td class="percentageCell">4 - 6</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color4 colorCell"></td>
+					        		<td class="percentageCell">6 - 8</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color5 colorCell"></td>
+					        		<td class="percentageCell">8 - 10</td>
+					        	</tr>
+					        </table>
+				        </td>
+				    </tr>
+				  </table>
+			</li>
+			<li class="list-group-item"><p class="text-justify">
+				
+				<table cellspacing="0" cellpadding="0" border="0" >
+				      <tr>
+				        <td class="textCriteria">
+				        	<p class="font-weight-bold">28. Vital companies / 1.000 hospitalized patients</p> 
+							</p>It is the amount of companies for each 100 patients, which supplies are vital for the proper operation of the hospital, with materials such as water, food, first need materials, etc. </p>			        
+						</td>
+				        <td class="colorTable">
+				        	<table cellspacing="0" cellpadding="0" border="1" >
+					        	<tr >
+					        		<td class="color1 colorCell"></td>
+					        		<td class="percentageCell">8 - 10</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color2 colorCell"></td>
+					        		<td class="percentageCell">6 - 8</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color3 colorCell"></td>
+					        		<td class="percentageCell">4 - 6</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color4 colorCell"></td>
+					        		<td class="percentageCell">2 - 4</td>
+					        	</tr>
+					        	<tr>
+					        		<td class="color5 colorCell"></td>
+					        		<td class="percentageCell">0 - 2</td>
+					        	</tr>
+					        </table>
+				        </td>
+				    </tr>
+				  </table>
+			</li>
+		</ul>
+		
+		<p class="text-justify"></p>
+	</div>
+</tbody>
+</html>
