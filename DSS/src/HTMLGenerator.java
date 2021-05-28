@@ -57,16 +57,12 @@ public class HTMLGenerator {
 		    		  + 		"<tbody>"
 		    		  + 			"<tr>"
 		    		  + 				"<td></td>"
-		    		  + 				"<td></td>"
-		    		  + 				"<td>Value</td>"
-		    		  + 				"<td>Score</td>"
-		    		  + 				"<td>Total</td>"
-		    		  + 				"<td>Value</td>"
-		    		  + 				"<td>Score</td>"
-		    		  + 				"<td>Total</td>"
-		    		  + 				"<td>Value</td>"
-		    		  + 				"<td>Score</td>"
-		    		  + 				"<td>Total</td>");
+		    		  + 				"<td></td>");
+		      for(int i=0; i < names.length;i++) {
+		    	  report.write("<td>Value</td>" + 
+		    			  		"<td>Score</td>" + 
+		    	  				"<td>Total</td>");
+		      }
 		    		  
     		  for(int i=0; i < criteria.length;i++) {
     			  if(i != 28) {
@@ -100,7 +96,7 @@ public class HTMLGenerator {
 		      report.close();
 		      
 		      
-		      System.out.println("Report generated.");
+		      
 		    } catch (IOException e) {
 		      System.out.println("An error occurred.");
 		      e.printStackTrace();

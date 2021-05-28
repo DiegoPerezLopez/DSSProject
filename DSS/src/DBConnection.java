@@ -4,15 +4,19 @@ public class DBConnection {
 	
 	Connection con;
 	
-	DBConnection(){
-		try{  
+	DBConnection(String databaseUsername, String databasePassword) throws  SQLException{
+  
 			//step1 load the driver class  
-			Class.forName("oracle.jdbc.driver.OracleDriver");  
+			try {
+				Class.forName("oracle.jdbc.driver.OracleDriver");
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}  
 			  
 			//step2 create  the connection object  
-			con=DriverManager.getConnection( "jdbc:oracle:thin:@localhost:1521:orcl","DSS","DSS1234");   
+			con=DriverManager.getConnection( "jdbc:oracle:thin:@localhost:1521:orcl",databaseUsername,databasePassword);   
 			  
-			}catch(Exception e){ System.out.println(e);}  
 	}
 	
 	public Connection getConnection() {

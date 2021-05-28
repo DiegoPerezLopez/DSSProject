@@ -1,6 +1,10 @@
-import java.sql.*;  
+import java.awt.Desktop;
+import java.io.File;
+import java.io.IOException;
+import java.sql.*;
 
-import org.apache.commons.math3.stat.regression.SimpleRegression;
+import javax.swing.JTextPane;
+
 
 public class Processor {
 	private Connection con;
@@ -19,14 +23,18 @@ public class Processor {
 	private LinearRegression lr;
 	
 	Processor(){
-		DBConnection dbc = new DBConnection();
+		
+	}
+	
+	public void connect(String databaseUsername, String databasePassword) throws SQLException {
+		DBConnection dbc = new DBConnection(databaseUsername, databasePassword);
 		this.con = dbc.getConnection();
 	}
 	
-	public void execute() {
+	public void execute(JTextPane text) throws SQLException {
 		
 		
-		try{ 
+		
 		
 			 setMatrix();
 			 setLocation();
@@ -63,11 +71,21 @@ public class Processor {
 			 insertPrediction();
 			   
 			//con.close(); 
-		}catch(Exception e){ e.printStackTrace();} 
 		
 		
 		HTMLGenerator htmlG = new HTMLGenerator();
 		htmlG.createHTML(names, values, scores, total, criteria, weighting, colors);
+		
+		text.setText(text.getText()+"\n"+"Report generated");
+		
+		File htmlFile = new File("DSSReport/report.html");
+		try {
+			Desktop.getDesktop().browse(htmlFile.toURI());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 	
 	public void setMatrix() throws SQLException {
@@ -622,14 +640,16 @@ public class Processor {
 		Statement stmt2=this.con.createStatement();
 		
 		for(int i = 0; i<names.length;i++) {
-			ResultSet rs=stmt.executeQuery("select ls.sick_patients from location_situation ls " + 
-										"    inner join location l on l.location_id = ls.location_id " + 
-										"    where l.name = '"+names[i]+"' " + 
-										"    and ls.date_loc_situation = (select max(ls2.date_loc_situation)  " + 
-										"                                from location_situation  ls2)");  
+			ResultSet rs=stmt.executeQuery("select ls.sick_patients from location_situation ls  " + 
+											"inner join location l on l.location_id = ls.location_id  " + 
+											"where l.name = '"+names[i]+"'  " + 
+											"and ls.date_loc_situation = (select max(ls2.date_loc_situation)   " + 
+											"from location_situation  ls2 " + 
+											"where ls2.location_id = l.location_id)");  
 			
 			ResultSet rs2=stmt2.executeQuery("select population from location " + 
 											"where name = '"+names[i]+"'");  
+			
 			
 			if(rs.next() && rs2.next()) {
 				float op1 = Integer.parseInt(rs.getString(1));
@@ -736,7 +756,8 @@ public class Processor {
 										"    inner join location l on l.location_id = ls.location_id " + 
 										"    where l.name = '"+names[i]+"' " + 
 										"    and ls.date_loc_situation = (select max(ls2.date_loc_situation)  " + 
-										"                                from location_situation  ls2)");  
+										"                                from location_situation  ls2 " + 
+										"											where ls2.location_id = l.location_id)");  
 			
 			ResultSet rs2=stmt2.executeQuery("select population from location " + 
 												"where name = '"+names[i]+"'");  
@@ -842,13 +863,15 @@ public class Processor {
 										"    inner join location l on l.location_id = ls.location_id " + 
 										"    where l.name = '"+names[i]+"' " + 
 										"    and ls.date_loc_situation = (select max(ls2.date_loc_situation)  " + 
-										"                                from location_situation  ls2)");  
+										"									from location_situation  ls2 " + 
+										"									where ls2.location_id = l.location_id)");   
 			
 			ResultSet rs2=stmt2.executeQuery("select ls.sick_patients from location_situation ls " + 
 										"    inner join location l on l.location_id = ls.location_id " + 
 										"    where l.name = '"+names[i]+"' " + 
 										"    and ls.date_loc_situation = (select max(ls2.date_loc_situation)  " + 
-										"                                from location_situation  ls2)");    
+										"								from location_situation  ls2 " + 
+										"								where ls2.location_id = l.location_id)");   
 			
 			if(rs.next() && rs2.next()) {
 				float op1 = Integer.parseInt(rs.getString(1));
@@ -884,7 +907,8 @@ public class Processor {
 										"    inner join location l on l.location_id = ls.location_id " + 
 										"    where l.name = '"+names[i]+"' " + 
 										"    and ls.date_loc_situation = (select max(ls2.date_loc_situation) " + 
-										"                                from location_situation  ls2)");  
+										"									from location_situation  ls2 " + 
+										"									where ls2.location_id = l.location_id)");   
 			
 			ResultSet rs2=stmt2.executeQuery("select population from location " + 
 												"where name = '"+names[i]+"'");  
@@ -990,13 +1014,15 @@ public class Processor {
 										"    inner join location l on l.location_id = ls.location_id " + 
 										"    where l.name = '"+names[i]+"' " + 
 										"    and ls.date_loc_situation = (select max(ls2.date_loc_situation) " + 
-										"                                from location_situation  ls2)");  
+										"								from location_situation  ls2 " + 
+										"								where ls2.location_id = l.location_id)");   
 			
 			ResultSet rs2=stmt2.executeQuery("select ls.recovered_patients from location_situation ls " + 
 										"    inner join location l on l.location_id = ls.location_id " + 
 										"    where l.name = '"+names[i]+"' " + 
 										"    and ls.date_loc_situation = (select max(ls2.date_loc_situation)  " + 
-										"                                from location_situation  ls2)");    
+										"								from location_situation  ls2 " + 
+										"								where ls2.location_id = l.location_id)");     
 			
 			if(rs.next() && rs2.next()) {
 				float op1 = Integer.parseInt(rs.getString(1));
@@ -1013,8 +1039,9 @@ public class Processor {
 					scores[i][17] = "3";
 				else if(aux > 3.0 && aux <= 4.0)
 					scores[i][17] = "4";
-				else if(aux > 4.0 && aux <= 5.0)
+				else if(aux > 4.0)
 					scores[i][17] = "5";
+				
 				
 				colors[i][17] = "color"+scores[i][17];
 				total[i][17] = String.valueOf(weighting[17]*Integer.parseInt(scores[i][17]));
@@ -1063,7 +1090,8 @@ public class Processor {
 											"    inner join location l on l.location_id = ls.location_id " + 
 											"    where l.name = '"+names[i]+"' " + 
 											"    and ls.date_loc_situation = (select max(ls2.date_loc_situation) " + 
-											"                                from location_situation  ls2)");  
+											"								from location_situation  ls2 " + 
+											"								where ls2.location_id = l.location_id)");    
 			
 			
 			if(rs.next()) {
@@ -1338,7 +1366,8 @@ public class Processor {
 											"    inner join location l on l.location_id = ls.location_id " + 
 											"    where l.name = '"+names[i]+"' " + 
 											"    and ls.date_loc_situation = (select max(ls2.date_loc_situation) " + 
-											"                                from location_situation  ls2)");  
+											"								from location_situation  ls2 " + 
+											"								where ls2.location_id = l.location_id)");   
 			
 			
 			if(rs.next()) {
@@ -1371,7 +1400,8 @@ public class Processor {
 										"    inner join location l on l.location_id = ls.location_id " + 
 										"    where l.name = '"+names[i]+"' " + 
 										"    and ls.date_loc_situation = (select max(ls2.date_loc_situation)  " + 
-										"                                from location_situation  ls2)");  
+										"									from location_situation  ls2 " + 
+										"									where ls2.location_id = l.location_id)");  
 			
 			
 			if(rs.next()) {
@@ -1404,7 +1434,8 @@ public class Processor {
 										"    inner join location l on l.location_id = ls.location_id " + 
 										"    where l.name = '"+names[i]+"' " + 
 										"    and ls.date_loc_situation = (select max(ls2.date_loc_situation) " + 
-										"                                from location_situation  ls2)");  
+										"								from location_situation  ls2 " + 
+										"								where ls2.location_id = l.location_id)");   
 			
 			
 			if(rs.next()) {
@@ -1438,7 +1469,8 @@ public class Processor {
 										"    inner join location l on l.location_id = ls.location_id " + 
 										"    where l.name = '"+names[i]+"' " + 
 										"    and ls.date_loc_situation = (select max(ls2.date_loc_situation) " + 
-										"                                from location_situation  ls2)");  
+										"									from location_situation  ls2 " + 
+										"									where ls2.location_id = l.location_id)");    
 			ResultSet rs2=stmt2.executeQuery("select sum(hs.hosp_total_patients) from hospital_situation hs " + 
 					"inner join hospital h on h.hospital_id = hs.hospital_id " + 
 					"inner join location l on l.location_id = h.location_id " + 
@@ -1513,17 +1545,115 @@ public class Processor {
 			insert[i][11] = String.valueOf(j);
 		}
 		
-		String[] in = new String[insert.length];
-		for(int i = 0; i<insert.length;i++) {
-			in[i] = "insert into prediction (prediction_id, date_prediction, e_icu_total, e_icu_covid, e_hosp_total"
-					+ ", e_hosp_covid, e_new_sick, e_recovered, e_deaths, personnel_needed, equipment_needed, location_id)"
-					+ " values ('"+insert[i][0]+"', "+insert[i][1]+", '"+insert[i][2]+"', '"+insert[i][3]+"', '"+insert[i][4]+"', '"
-					+insert[i][5]+"', '"+insert[i][6]+"', '"+insert[i][7]+"', '"+insert[i][8]+"', '"+insert[i][9]+"', '"
-					+insert[i][10]+"', '"+insert[i][11]+"')";
+		try {
+		
+			String[] in = new String[insert.length];
+			for(int i = 0; i<insert.length;i++) {
+				in[i] = "insert into prediction (prediction_id, date_prediction, e_icu_total, e_icu_covid, e_hosp_total"
+						+ ", e_hosp_covid, e_new_sick, e_recovered, e_deaths, personnel_needed, equipment_needed, location_id)"
+						+ " values ('"+insert[i][0]+"', "+insert[i][1]+", '"+insert[i][2]+"', '"+insert[i][3]+"', '"+insert[i][4]+"', '"
+						+insert[i][5]+"', '"+insert[i][6]+"', '"+insert[i][7]+"', '"+insert[i][8]+"', '"+insert[i][9]+"', '"
+						+insert[i][10]+"', '"+insert[i][11]+"')";
+				
+				stmt.executeQuery(in[i]);
+			}
+		}catch(Exception e){
 			
-			stmt.executeQuery(in[i]);
 		}
 		
+		
+	}
+	
+	public void insertLocation(String[] data) throws SQLException{
+		Statement stmt=this.con.createStatement();
+		Statement stmt2=this.con.createStatement();
+		
+		ResultSet rs2=stmt2.executeQuery("select location_id from location " + 
+										"where rownum = 1 " + 
+										"order by location_id desc");
+		int id=0;
+		if(rs2.next()) {
+			id = rs2.getInt(1)+1;
+		}
+		
+		
+		String in = "INSERT INTO location ( location_id, name, population, average_age) VALUES ("+id+",'"+data[0]+"',"+data[1]+","+data[2]+")";
+		stmt.executeQuery(in);
+		
+	}
+	
+	public void insertLocationSituation(String[] data) throws SQLException{
+		Statement stmt=this.con.createStatement();
+		Statement stmt2=this.con.createStatement();
+		Statement stmt3=this.con.createStatement();
+		
+		ResultSet rs2=stmt2.executeQuery("select loc_sit_id from location_situation " + 
+										"where rownum = 1 " + 
+										"order by loc_sit_id desc");
+		ResultSet rs3=stmt3.executeQuery("select location_id from location l " + 
+										"where l.name = '"+data[9]+"'");
+		
+		int id=0;
+		int location = 0;
+		if(rs2.next() && rs3.next()) {
+			id = rs2.getInt(1)+1;
+			location = rs3.getInt(1);
+		}
+		
+		
+		String in = "INSERT INTO location_situation ( loc_sit_id, date_loc_situation, sick_patients, recovered_patients, deaths, average_sick_age, lockdown_level, weather, transport_level, vital_companies, location_id) " + 
+					"VALUES ( "+id+", date '"+data[0]+"', '"+data[1]+"', '"+data[2]+"', '"+data[3]+"', '"+data[4]+"', '"+data[5]+"', '"+data[6]+"', '"+data[7]+"', '"+data[8]+"', '"+location+"')";
+		stmt.executeQuery(in);
+		
+	}
+	
+	public void insertHospital(String[] data) throws SQLException{
+		Statement stmt=this.con.createStatement();
+		Statement stmt2=this.con.createStatement();
+		Statement stmt3=this.con.createStatement();
+		
+		ResultSet rs2=stmt2.executeQuery("select hospital_id from hospital " + 
+										"where rownum = 1 " + 
+										"order by hospital_id desc ");
+		ResultSet rs3=stmt3.executeQuery("select location_id from location l " + 
+										"where l.name = '"+data[5]+"'");
+		
+		int id=0;
+		int location = 0;
+		if(rs2.next() && rs3.next()) {
+			id = rs2.getInt(1)+1;
+			location = rs3.getInt(1);
+		}
+		
+		
+		String in = "INSERT INTO hospital ( hospital_id, name, size_shift, icu_size, hosp_size, equipment_limit, location_id) " + 
+					"VALUES ( "+id+", '"+data[0]+"', '"+data[1]+"', '"+data[2]+"', '"+data[3]+"', '"+data[4]+"', '"+location+"')";
+		stmt.executeQuery(in);
+		
+	}
+	
+	public void insertHospitalSituation(String[] data) throws SQLException{
+		Statement stmt=this.con.createStatement();
+		Statement stmt2=this.con.createStatement();
+		Statement stmt3=this.con.createStatement();
+		
+		ResultSet rs2=stmt2.executeQuery("select hosp_sit_id from hospital_situation " + 
+											"where rownum = 1 " + 
+											"order by hosp_sit_id desc");
+		ResultSet rs3=stmt3.executeQuery("select hospital_id from hospital " + 
+											"where name = '"+data[6]+"'");
+		
+		int id=0;
+		int location = 0;
+		if(rs2.next() && rs3.next()) {
+			id = rs2.getInt(1)+1;
+			location = rs3.getInt(1);
+		}
+		
+		
+		String in = "INSERT INTO hospital_situation ( hosp_sit_id, date_hosp_situation, icu_covid_patients, icu_total_patients, hosp_covid_patients, hosp_total_patients, actual_equipment, hospital_id)\r\n" + 
+					"VALUES ( "+id+", date '"+data[0]+"', '"+data[1]+"', '"+data[2]+"', '"+data[3]+"', '"+data[4]+"', '"+data[5]+"', '"+location+"')";
+		stmt.executeQuery(in);
 		
 	}
 	
